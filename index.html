@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name | Junior Web Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name, a Junior Web Developer building modern web applications with JavaScript, React, Node.js, and Next.js.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Your Name">
+  <meta name="theme-color" content="#4338CA">
+  <meta property="og:title" content="Your Name | Junior Web Developer Portfolio">
+  <meta property="og:description" content="Explore projects, skills, and contact details of Your Name, a Junior Web Developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com/">
+  <meta property="og:image" content="https://your-domain.com/preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your Name | Junior Web Developer Portfolio">
+  <meta name="twitter:description" content="Building modern web applications with JavaScript.">
+  <meta name="twitter:image" content="https://your-domain.com/preview.png">
+  <link rel="canonical" href="https://your-domain.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              500: "#4F46E5",
+              600: "#4338CA",
+              700: "#3730A3"
+            },
+            surface: "#F8FAFC",
+            "surface-alt": "#EEF2FF",
+            "text-main": "#0F172A",
+            "text-soft": "#475569"
+          },
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="bg-surface text-text-main antialiased">
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+    <nav aria-label="Primary navigation" class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
+      <a href="#hero" class="text-xl font-bold tracking-tight">Htet Naing Wynn</a>
+      <button id="menu-toggle" aria-label="Toggle mobile menu" class="md:hidden rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium hover:bg-slate-50">
+        Menu
+      </button>
+      <ul id="menu" class="hidden items-center gap-7 text-sm font-medium text-text-soft md:flex">
+        <li><a href="#hero" data-nav-link="hero" class="nav-link nav-link-active">Home</a></li>
+        <li><a href="#about" data-nav-link="about" class="nav-link">About</a></li>
+        <li><a href="#skills" data-nav-link="skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" data-nav-link="projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" data-nav-link="contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white md:hidden">
+      <ul class="space-y-2 px-4 py-3 text-sm text-text-soft">
+        <li><a href="#hero" data-nav-link="hero" class="mobile-nav-link nav-link-active">Home</a></li>
+        <li><a href="#about" data-nav-link="about" class="mobile-nav-link">About</a></li>
+        <li><a href="#skills" data-nav-link="skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" data-nav-link="projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#contact" data-nav-link="contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 md:px-6">
+    <section id="hero" class="section text-center">
+      <div class="rounded-2xl border border-slate-200 bg-white px-6 py-12 shadow-sm md:px-12 md:py-16">
+        <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-surface-alt text-2xl font-bold text-primary-600">
+          HNW
+        </div>
+        <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl">Htet Naing Wynn</h1>
+        <p class="mt-4 text-xl font-semibold text-primary-600 md:text-2xl">Junior Web Developer</p>
+        <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-text-soft">
+          "Building modern web applications with JavaScript"
+        </p>
+        <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-secondary">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-border">
+      <h2 class="section-title">About Me</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <article class="card">
+          <h3 class="text-lg font-semibold text-text-main">Short Introduction</h3>
+          <p class="mt-3 text-sm leading-7 text-text-soft">
+            I am a junior web developer focused on building clean and responsive websites.
+            I enjoy turning ideas into real products with simple, user-friendly experiences.
+          </p>
+        </article>
+        <article class="card">
+          <h3 class="text-lg font-semibold text-text-main">Learning Journey</h3>
+          <p class="mt-3 text-sm leading-7 text-text-soft">
+            I started with JavaScript, moved into React for modern frontend development,
+            explored Backend fundamentals to understand APIs and data flow, and now I am
+            learning Next.js to build full-stack applications.
+          </p>
+        </article>
+      </div>
+      <div class="mt-6 rounded-xl border border-slate-200 bg-white p-5">
+        <h3 class="text-lg font-semibold text-text-main">Career Goal</h3>
+        <p class="mt-3 text-sm leading-7 text-text-soft">
+          My goal is to grow into a professional full-stack developer, contribute to impactful products,
+          and continuously improve my skills in modern web technologies.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" class="section section-border">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-copy mt-3">Technologies and tools I use to build modern web applications.</p>
+      <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="card">
+          <h3 class="text-base font-semibold text-text-main">Frontend</h3>
+          <ul class="mt-4 space-y-2 text-sm text-text-soft">
+            <li>🎨 HTML</li>
+            <li>🎨 CSS</li>
+            <li>⚡ JavaScript</li>
+            <li>💨 Tailwind CSS</li>
+            <li>🧩 Bootstrap</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 class="text-base font-semibold text-text-main">Backend</h3>
+          <ul class="mt-4 space-y-2 text-sm text-text-soft">
+            <li>🟢 Node.js</li>
+            <li>🚀 Express.js</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 class="text-base font-semibold text-text-main">Database</h3>
+          <ul class="mt-4 space-y-2 text-sm text-text-soft">
+            <li>🗄️ SQLite</li>
+            <li>🔺 Prisma</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 class="text-base font-semibold text-text-main">Mobile (Optional)</h3>
+          <ul class="mt-4 space-y-2 text-sm text-text-soft">
+            <li>📱 React Native</li>
+          </ul>
+        </article>
+        <article class="card sm:col-span-2 lg:col-span-2">
+          <h3 class="text-base font-semibold text-text-main">Tools</h3>
+          <div class="mt-4 grid grid-cols-2 gap-2 text-sm text-text-soft sm:grid-cols-3">
+            <span class="chip">🔧 Git</span>
+            <span class="chip">🐙 GitHub</span>
+            <span class="chip">📦 NPM</span>
+            <span class="chip">⚡ Vite</span>
+            <span class="chip">📘 TypeScript</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-border">
+      <h2 class="section-title">Projects</h2>
+      <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="card transition duration-300 hover:-translate-y-1 hover:shadow-md">
+          <h3 class="text-lg font-semibold text-text-main">Portfolio Website</h3>
+          <p class="mt-2 text-sm leading-6 text-text-soft">
+            Personal portfolio website with modern design, responsive layout, and smooth scrolling navigation.
+          </p>
+          <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-primary-600">
+            Tech: HTML, Tailwind CSS, JavaScript
+          </p>
+          <div class="mt-5 flex items-center gap-4">
+            <a href="https://example.com/portfolio-demo" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-primary-600 hover:text-primary-700">Live Demo</a>
+            <a href="https://github.com/yourname/portfolio-website" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-600 hover:text-slate-800">GitHub</a>
+          </div>
+        </article>
+        <article class="card transition duration-300 hover:-translate-y-1 hover:shadow-md">
+          <h3 class="text-lg font-semibold text-text-main">Task Manager App</h3>
+          <p class="mt-2 text-sm leading-6 text-text-soft">
+            A task management application with create, update, and delete features plus filter options.
+          </p>
+          <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-primary-600">
+            Tech: React, Vite, Tailwind CSS
+          </p>
+          <div class="mt-5 flex items-center gap-4">
+            <a href="https://example.com/task-manager-demo" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-primary-600 hover:text-primary-700">Live Demo</a>
+            <a href="https://github.com/yourname/task-manager-app" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-600 hover:text-slate-800">GitHub</a>
+          </div>
+        </article>
+        <article class="card transition duration-300 hover:-translate-y-1 hover:shadow-md">
+          <h3 class="text-lg font-semibold text-text-main">Blog API</h3>
+          <p class="mt-2 text-sm leading-6 text-text-soft">
+            Backend API for blog posts with authentication-ready structure and SQLite database integration.
+          </p>
+          <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-primary-600">
+            Tech: Node.js, Express.js, SQLite, Prisma
+          </p>
+          <div class="mt-5 flex items-center gap-4">
+            <a href="https://example.com/blog-api-demo" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-primary-600 hover:text-primary-700">Live Demo</a>
+            <a href="https://github.com/yourname/blog-api" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-600 hover:text-slate-800">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-border">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-copy mx-auto">
+          Feel free to reach out for collaboration, internship opportunities, or project discussions.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
+          <a href="mailto:htetnaingwinn1@gmail.com" class="chip">Email</a>
+          <a href="https://github.com/HtetNaingWynn" target="_blank" rel="noopener noreferrer" class="chip">GitHub</a>
+          <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer" class="chip">LinkedIn</a>
+        </div>
+      </div>
+
+      <form id="contact-form" novalidate class="mx-auto mt-10 max-w-2xl rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm md:p-8">
+        <div class="grid gap-5">
+          <div>
+            <label for="name" class="mb-2 block text-sm font-semibold text-slate-700">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name"
+              autocomplete="name"
+              class="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:bg-white focus:ring-2 focus:ring-primary-100">
+            <p id="name-error" class="mt-1 text-xs text-red-600"></p>
+          </div>
+
+          <div>
+            <label for="email" class="mb-2 block text-sm font-semibold text-slate-700">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com"
+              autocomplete="email"
+              class="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:bg-white focus:ring-2 focus:ring-primary-100">
+            <p id="email-error" class="mt-1 text-xs text-red-600"></p>
+          </div>
+
+          <div>
+            <label for="message" class="mb-2 block text-sm font-semibold text-slate-700">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message..."
+              class="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-primary-500 focus:bg-white focus:ring-2 focus:ring-primary-100"></textarea>
+            <p id="message-error" class="mt-1 text-xs text-red-600"></p>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="btn-primary w-full sm:w-auto">Send Message</button>
+            <p id="form-success" class="mt-3 text-sm font-medium text-emerald-600"></p>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="mt-12 border-t border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-6 text-sm text-slate-500 md:px-6">
+      © 2026 Htet Naing Wynn. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>
