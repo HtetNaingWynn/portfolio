@@ -57,6 +57,91 @@ body {
   color: #475569;
 }
 
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(17.5rem, 42vh, 28rem);
+  border-radius: 1rem;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 12px 40px -16px rgba(67, 56, 202, 0.12);
+  /* Base: light gray → white with a whisper of purple */
+  background-color: #f8fafc;
+  background-image:
+    /* Soft vertical light falloff for depth */
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.7) 0%,
+      transparent 38%,
+      rgba(248, 250, 252, 0.55) 100%
+    ),
+    /* Minimal geometric grid (tech / structure) */
+    linear-gradient(rgba(67, 56, 202, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(67, 56, 202, 0.045) 1px, transparent 1px),
+    /* Diagonal accent band — subtle primary tint */
+    linear-gradient(
+      118deg,
+      transparent 0%,
+      transparent 52%,
+      rgba(67, 56, 202, 0.04) 100%
+    ),
+    /* Corner glows matching primary button */
+    radial-gradient(
+      ellipse 120% 90% at 100% 0%,
+      rgba(67, 56, 202, 0.075) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 100% 80% at 0% 100%,
+      rgba(79, 70, 229, 0.055) 0%,
+      transparent 50%
+    ),
+    linear-gradient(
+      168deg,
+      #f8fafc 0%,
+      #fafbff 38%,
+      #ffffff 72%,
+      #f1f5f9 100%
+    );
+  background-size:
+    auto,
+    44px 44px,
+    44px 44px,
+    auto,
+    auto,
+    auto,
+    auto;
+  background-position: center;
+  background-repeat: no-repeat, repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    -28deg,
+    transparent,
+    transparent 56px,
+    rgba(67, 56, 202, 0.028) 56px,
+    rgba(67, 56, 202, 0.028) 57px
+  );
+  opacity: 0.85;
+}
+
+.hero-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
