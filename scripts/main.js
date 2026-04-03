@@ -72,6 +72,8 @@ sectionIds.forEach((id) => {
 });
 
 const contactForm = document.getElementById("contact-form");
+const FORMSUBMIT_EMAIL = "htetnaingwinn1@gmail.com";
+const FORMSUBMIT_AJAX = `https://formsubmit.co/ajax/${FORMSUBMIT_EMAIL}`;
 
 if (contactForm) {
   const nameInput = document.getElementById("name");
@@ -80,11 +82,18 @@ if (contactForm) {
   const nameError = document.getElementById("name-error");
   const emailError = document.getElementById("email-error");
   const messageError = document.getElementById("message-error");
+  const formError = document.getElementById("form-error");
   const formSuccess = document.getElementById("form-success");
+  const formNext = document.getElementById("form-next");
+  const submitButton = contactForm.querySelector('button[type="submit"]');
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  contactForm.addEventListener("submit", (event) => {
+  if (formNext) {
+    formNext.value = `${window.location.origin}${window.location.pathname}#contact`;
+  }
+
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const nameValue = nameInput ? nameInput.value.trim() : "";
@@ -101,6 +110,9 @@ if (contactForm) {
     }
     if (messageError) {
       messageError.textContent = "";
+    }
+    if (formError) {
+      formError.textContent = "";
     }
     if (formSuccess) {
       formSuccess.textContent = "";
@@ -141,9 +153,52 @@ if (contactForm) {
       return;
     }
 
-    contactForm.reset();
-    if (formSuccess) {
-      formSuccess.textContent = "Message sent successfully. Thank you!";
+    const previousLabel = submitButton ? submitButton.textContent : "";
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending…";
+    }
+
+    try {
+      const response = await fetch(FORMSUBMIT_AJAX, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      let data = {};
+      try {
+        data = await response.json();
+      } catch {
+        data = {};
+      }
+
+      if (response.ok) {
+        if (formSuccess) {
+          formSuccess.textContent =
+            typeof data.message === "string" && data.message
+              ? data.message
+              : "Thanks! Your message was sent.";
+        }
+        contactForm.reset();
+      } else if (formError) {
+        formError.textContent =
+          typeof data.message === "string" && data.message
+            ? data.message
+            : "Could not send your message. Please try again in a moment.";
+      }
+    } catch {
+      if (formError) {
+        formError.textContent =
+          "Could not reach the form service. If you opened this page as a file, use a local server or deploy the site, then try again.";
+      }
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = previousLabel;
+      }
     }
   });
 }
